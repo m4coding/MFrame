@@ -101,7 +101,7 @@ public class MLog {
 
     //VERBOSE
     public static void v(Object msg) {
-        v(null, msg);
+        printLog(MLogConstant.VERBOSE, MLogConstant.OUTPUT_TYPE_LOG, null, msg);//注意使用printLog
     }
 
     public static void v(String tag, Object msg) {
@@ -110,7 +110,7 @@ public class MLog {
 
     //DEBUG
     public static void d(Object msg) {
-        d(null, msg);
+        printLog(MLogConstant.DEBUG, MLogConstant.OUTPUT_TYPE_LOG, null, msg);
     }
 
     public static void d(String tag, Object msg) {
@@ -119,7 +119,7 @@ public class MLog {
 
     //INFO
     public static void i(Object msg) {
-        i(null, msg);
+        printLog(MLogConstant.INFO, MLogConstant.OUTPUT_TYPE_LOG, null, msg);
     }
 
     public static void i(String tag, Object msg) {
@@ -128,7 +128,7 @@ public class MLog {
 
     //WARN
     public static void w(Object msg) {
-        w(null, msg);
+        printLog(MLogConstant.WARN, MLogConstant.OUTPUT_TYPE_LOG, null, msg);
     }
 
     public static void w(String tag, Object msg) {
@@ -137,7 +137,7 @@ public class MLog {
 
     //ERROR
     public static void e(Object msg) {
-        e(null, msg);
+        printLog(MLogConstant.ERROR, MLogConstant.OUTPUT_TYPE_LOG, null, msg);
     }
 
     public static void e(String tag, Object msg) {
@@ -146,7 +146,7 @@ public class MLog {
 
     //ASSERT
     public static void a(Object msg) {
-        a(null, msg);
+        printLog(MLogConstant.ASSERT, MLogConstant.OUTPUT_TYPE_LOG, null, msg);
     }
 
     public static void a(String tag, Object msg) {
@@ -155,7 +155,7 @@ public class MLog {
 
     //JSON
     public static void json(int level, String jsonFormat) {
-        json(level, null, jsonFormat);
+        printLog(level, MLogConstant.OUTPUT_TYPE_JSON, null, jsonFormat);
     }
 
     public static void json(int level, String tag, String jsonFormat) {
@@ -164,7 +164,7 @@ public class MLog {
 
     //XML
     public static void xml(int level, String xml) {
-        xml(level, null, xml);
+        printLog(level, MLogConstant.OUTPUT_TYPE_XML, null, xml);
     }
 
     public static void xml(int level, String tag, String xml) {

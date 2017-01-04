@@ -1,4 +1,4 @@
-package com.mcs.mframe;
+package com.mcs.mframe.sample;
 
 import org.junit.Test;
 

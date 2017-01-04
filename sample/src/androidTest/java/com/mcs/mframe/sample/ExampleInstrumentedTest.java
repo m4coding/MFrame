@@ -1,4 +1,4 @@
-package com.mcs.mframe;
+package com.mcs.mframe.sample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.mcs.mframe", appContext.getPackageName());
+        assertEquals("com.mcs.mframe.sample", appContext.getPackageName());
     }
 }
