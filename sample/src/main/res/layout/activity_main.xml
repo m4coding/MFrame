@@ -23,6 +23,11 @@
                 android:layout_height="wrap_content"
                 android:text="MLog测试"
                 android:onClick="onMLogTest"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LazyFragment测试"
+                android:onClick="onLazyFragmentTest"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

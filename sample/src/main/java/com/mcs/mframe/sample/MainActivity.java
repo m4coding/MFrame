@@ -6,8 +6,23 @@ import android.view.View;
 
 import com.mcs.mframe.log.MLog;
 import com.mcs.mframe.log.base.MLogConstant;
+import com.mcs.mframe.sample.testLazy.TestLazyActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static String XML =
+            "<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n" +
+            "    xmlns:tools=\"http://schemas.android.com/tools\"\n" +
+            "    android:id=\"@+id/activity_main\"\n" +
+            "    android:layout_width=\"match_parent\"\n" +
+            "    android:layout_height=\"match_parent\"\n" +
+            "    android:paddingBottom=\"@dimen/activity_vertical_margin\"\n" +
+            "    android:paddingLeft=\"@dimen/activity_horizontal_margin\"\n" +
+            "    android:paddingRight=\"@dimen/activity_horizontal_margin\"\n" +
+            "    android:paddingTop=\"@dimen/activity_vertical_margin\"\n" +
+            "    tools:context=\"com.mcs.mframe.sample.MainActivity\"\n" +
+            "    android:orientation=\"vertical\">\n" +
+            "</LinearLayout>";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +60,14 @@ public class MainActivity extends AppCompatActivity {
         MLog.e("=====onMLogTest click filter error");
         MLog.a("=====onMLogTest click filter assert");
 
+        MLog.i(getString(R.string.json));
+        MLog.json(MLogConstant.INFO, getString(R.string.json));
+
+        MLog.xml(MLogConstant.INFO, "test xml");
+        MLog.xml(MLogConstant.INFO, XML);
+    }
+
+    public void onLazyFragmentTest(View view) {
+        TestLazyActivity.newInstance(this);
     }
 }

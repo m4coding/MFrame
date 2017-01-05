@@ -1,6 +1,8 @@
 package com.mcs.mframe.ui.activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -17,6 +19,21 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 public class BaseActivity extends RxAppCompatActivity {
 
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initView();
+        initData();
+    }
+
+    protected void initView() {
+
+    }
+
+    protected void initData() {
+
+    }
 
     /**************处理Fragment的相关方法*******************/
 
