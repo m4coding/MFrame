@@ -1,3 +1,11 @@
 参考：
 (1)首次使用ButterKnife之经历谈
 http://www.jianshu.com/p/79f1d94e45cf
+
+(2)FragmentPagerAdapter和FragmentStatePagerAdapter的区别
+FragmentPagerAdapter切换的时候会保存fragment的状态，用于快速恢复，用的是detach分离，fragment不会走onDestroy；
+FragmentStatePagerAdapter切换的时候不会保存fragment的状态，直接remove掉，适合多个加载
+
+(3)Fragment懒加载分析
+http://www.jianshu.com/p/104be7cd72b6 (Android之Fragment懒加载分析)
+http://www.cnblogs.com/dasusu/p/5926731.html (Fragment懒加载和ViewPager的坑)

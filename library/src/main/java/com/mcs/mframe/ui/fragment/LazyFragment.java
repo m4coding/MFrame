@@ -30,23 +30,35 @@ public abstract class LazyFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mConvertView = inflater.inflate(getLayoutId(), container, false);
-        mViews = new SparseArray<>();
-        initView();
-        initData();
-        mIsInitView = true;
-        lazyLoadData();
-        return mConvertView;
+        if (DEBUG) MLog.i("savedInstanceState==" + savedInstanceState);
+        if (mConvertView != null) {
+            return mConvertView;
+        } else {
+            mConvertView = inflater.inflate(getLayoutId(), container, false);
+            mViews = new SparseArray<>();
+            initView();
+            initData();
+            mIsInitView = true;
+            lazyLoadData();
+            return mConvertView;
+        }
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
 
         if (mViews != null) {
             mViews.clear();
             mViews = null;
         }
+
+        mConvertView = null;
     }
 
     @Override
@@ -68,13 +80,19 @@ public abstract class LazyFragment extends BaseFragment {
         } else {
             if (DEBUG) MLog.i(String.format("the is not first time load #mIsInitView==%b #mIsVisible==%b", mIsInitView, mIsVisible));
         }
-        if (!mIsFirstLoad || !mIsVisible || !mIsInitView) {
+
+        if (/*!mIsFirstLoad || */!mIsVisible || !mIsInitView) {
             if (DEBUG) MLog.i("not load");
             return;
         }
 
-        if (DEBUG) MLog.i("Complete the data load for the first time");
-        initLazyData();
+        if (mIsFirstLoad) {
+            if (DEBUG) MLog.i("Complete the data load for the first time");
+            initLazyData();
+        } else {
+            lazyUpdateData();
+        }
+
         mIsFirstLoad = false;
     }
 
@@ -115,8 +133,13 @@ public abstract class LazyFragment extends BaseFragment {
     protected abstract void initData();
 
     /**
-     * 加载要显示的数据(懒加载，即Fragment可见后才进行initLazyData)
+     * 加载要显示的数据(懒加载，即Fragment可见后才进行initLazyData (第一次，只执行一次))
      */
     protected abstract void initLazyData();
+
+    /**
+     * 刷新要显示的数据(懒加载，即Fragment可见后才进行 (非第一次执行，执行多次))
+     */
+    protected abstract void lazyUpdateData();
 
 }

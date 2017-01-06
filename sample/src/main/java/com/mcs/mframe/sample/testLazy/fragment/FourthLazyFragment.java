@@ -16,6 +16,7 @@ public class FourthLazyFragment extends BaseTestLazyFragment {
 
     @Override
     protected void initLazyData() {
+        super.initLazyData();
         produceData(TAG, 2000);
     }
 }

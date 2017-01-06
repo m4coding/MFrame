@@ -15,9 +15,6 @@ import com.mcs.mframe.sample.testLazy.fragment.SecondLazyFragment;
 import com.mcs.mframe.sample.testLazy.fragment.ThirdLazyFragment;
 import com.mcs.mframe.ui.activity.BaseActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * @author mochangsheng
  * @version 1.0

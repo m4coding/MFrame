@@ -41,20 +41,43 @@ public class BaseTestLazyFragment extends LazyFragment {
 
     @Override
     protected void initView() {
-        mListView = findView(R.id.lazy_list_view);
-        mProgressBar = findView(R.id.progress_bar);
-        mProgressBar.setVisibility(View.VISIBLE);
+        MLog.d("initView mListView==" + mListView + "; mProgressBar==" + mProgressBar);
+        if (mListView == null) {
+            mListView = findView(R.id.lazy_list_view);
+        }
+
+        if (mProgressBar == null) {
+            mProgressBar = findView(R.id.progress_bar);
+            mProgressBar.setVisibility(View.VISIBLE);
+        } else {
+            mProgressBar.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
     protected void initData() {
-        mList = new ArrayList<>();
-        mListAdapter = new ListAdapter(getActivity(), mList);
+        MLog.d("initView mList==" + (mList!=null) + "; mListAdapter==" + mListAdapter);
+        if (mList == null) {
+            mList = new ArrayList<>();
+        } else {
+            MLog.d("initView mList.size==" + mList.size());
+        }
+        if (mListAdapter == null) {
+            mListAdapter = new ListAdapter(getActivity(), mList);
+        }
     }
 
     @Override
     protected void initLazyData() {
+        //mListAdapter = new ListAdapter(getActivity(), mList);
+    }
 
+    @Override
+    protected void lazyUpdateData() {
+        if (mListAdapter != null) {
+            MLog.d("=======lazyUpdateData mListAdapter.notifyDataSetChanged()");
+            mListAdapter.notifyDataSetChanged();
+        }
     }
 
     protected void produceData(final String data, final int amount) {

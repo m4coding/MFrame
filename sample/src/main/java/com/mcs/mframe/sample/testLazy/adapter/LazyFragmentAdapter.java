@@ -3,6 +3,7 @@ package com.mcs.mframe.sample.testLazy.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  * @changeRecord [修改记录] <br/>
  */
 
-public class LazyFragmentAdapter extends FragmentPagerAdapter {
+public class LazyFragmentAdapter extends FragmentStatePagerAdapter {
 
     private List<Fragment> mFragments = new ArrayList<>();
     private List<String> mTitles = new ArrayList<>();
