@@ -3,9 +3,11 @@ package com.mcs.mframe.sample.testLazy;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
+import com.mcs.mframe.log.MLog;
 import com.mcs.mframe.sample.R;
 import com.mcs.mframe.sample.R2;
 import com.mcs.mframe.sample.testLazy.adapter.LazyFragmentAdapter;
@@ -52,5 +54,11 @@ public class TestLazyActivity extends BaseActivity {
         mViewPager.setAdapter(lazyFragmentAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        MLog.d("====onSaveInstanceState");
+        super.onSaveInstanceState(outState);
     }
 }

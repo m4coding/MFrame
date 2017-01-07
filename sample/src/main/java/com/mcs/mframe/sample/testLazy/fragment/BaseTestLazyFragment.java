@@ -10,6 +10,7 @@ import com.mcs.mframe.sample.testLazy.adapter.ListAdapter;
 import com.mcs.mframe.ui.fragment.LazyFragment;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import rx.Observable;
@@ -42,42 +43,23 @@ public class BaseTestLazyFragment extends LazyFragment {
     @Override
     protected void initView() {
         MLog.d("initView mListView==" + mListView + "; mProgressBar==" + mProgressBar);
-        if (mListView == null) {
-            mListView = findView(R.id.lazy_list_view);
-        }
+        mListView = findView(R.id.lazy_list_view);
 
-        if (mProgressBar == null) {
-            mProgressBar = findView(R.id.progress_bar);
-            mProgressBar.setVisibility(View.VISIBLE);
-        } else {
-            mProgressBar.setVisibility(View.VISIBLE);
-        }
+        mProgressBar = findView(R.id.progress_bar);
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     protected void initData() {
         MLog.d("initView mList==" + (mList!=null) + "; mListAdapter==" + mListAdapter);
-        if (mList == null) {
-            mList = new ArrayList<>();
-        } else {
-            MLog.d("initView mList.size==" + mList.size());
-        }
-        if (mListAdapter == null) {
-            mListAdapter = new ListAdapter(getActivity(), mList);
-        }
+        mList = new ArrayList<>();
+        mListAdapter = new ListAdapter(getActivity(), mList);
+        mListView.setAdapter(mListAdapter);
     }
 
     @Override
     protected void initLazyData() {
-        //mListAdapter = new ListAdapter(getActivity(), mList);
-    }
 
-    @Override
-    protected void lazyUpdateData() {
-        if (mListAdapter != null) {
-            MLog.d("=======lazyUpdateData mListAdapter.notifyDataSetChanged()");
-            mListAdapter.notifyDataSetChanged();
-        }
     }
 
     protected void produceData(final String data, final int amount) {
@@ -85,10 +67,11 @@ public class BaseTestLazyFragment extends LazyFragment {
         Observable.create(new Observable.OnSubscribe<Object>() {
                     @Override
                     public void call(Subscriber<? super Object> subscriber) {
+                        ArrayList<String> list = new ArrayList<>();
                         for(int i = 0; i < amount; i++) {
-                            mList.add(String.format("%d item==%s", i+1, data));
+                            list.add(String.format("%d item==%s", i+1, data));
                         }
-                        subscriber.onNext(mList);
+                        subscriber.onNext(list);
                         subscriber.onCompleted();
                         MLog.d("handle end " + Thread.currentThread());
                     }
@@ -100,6 +83,8 @@ public class BaseTestLazyFragment extends LazyFragment {
                     @Override
                     public void call(Object o) {
                         MLog.d("onNext");
+                        mList.clear();
+                        mList.addAll((Collection<? extends String>) o);
                     }
                 }, new Action1<Throwable>() {
                     @Override
@@ -111,7 +96,8 @@ public class BaseTestLazyFragment extends LazyFragment {
                     @Override
                     public void call() {
                         MLog.d("onComplete " + Thread.currentThread());
-                        mListView.setAdapter(mListAdapter);
+                        //mListView.setAdapter(mListAdapter);
+                        mListAdapter.notifyDataSetChanged();
                         mProgressBar.setVisibility(View.GONE);
                     }
                 });

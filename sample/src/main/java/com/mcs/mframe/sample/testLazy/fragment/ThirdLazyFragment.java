@@ -1,6 +1,4 @@
-package com.mcs.mframe.sample.testLazy.fragment;
-
-import com.mcs.mframe.ui.fragment.LazyFragment;
+package com.mcs.mframe.sample.testLazy.fragment;;
 
 /**
  * @author mochangsheng

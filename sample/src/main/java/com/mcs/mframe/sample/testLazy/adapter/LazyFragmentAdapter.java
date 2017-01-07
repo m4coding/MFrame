@@ -15,8 +15,8 @@ import java.util.List;
  * @created 2017/1/5
  * @changeRecord [修改记录] <br/>
  */
-
-public class LazyFragmentAdapter extends FragmentStatePagerAdapter {
+//FragmentStatePagerAdapter  FragmentPagerAdapter
+public class LazyFragmentAdapter extends FragmentPagerAdapter {
 
     private List<Fragment> mFragments = new ArrayList<>();
     private List<String> mTitles = new ArrayList<>();
