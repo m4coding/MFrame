@@ -12,7 +12,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".testLazy.TestLazyActivity"/>
+        <activity android:name=".testLazy.TestLazyActivity" />
 
     </application>
 

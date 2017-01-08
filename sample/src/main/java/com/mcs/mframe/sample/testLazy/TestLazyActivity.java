@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
@@ -16,6 +17,7 @@ import com.mcs.mframe.sample.testLazy.fragment.FourthLazyFragment;
 import com.mcs.mframe.sample.testLazy.fragment.SecondLazyFragment;
 import com.mcs.mframe.sample.testLazy.fragment.ThirdLazyFragment;
 import com.mcs.mframe.ui.activity.BaseActivity;
+import com.mcs.mframe.ui.activity.ToolbarActivity;
 
 /**
  * @author mochangsheng
@@ -25,10 +27,11 @@ import com.mcs.mframe.ui.activity.BaseActivity;
  * @changeRecord [修改记录] <br/>
  */
 
-public class TestLazyActivity extends BaseActivity {
+public class TestLazyActivity extends ToolbarActivity {
 
-    TabLayout mTabLayout;
-    ViewPager mViewPager;
+    private static String TAG = TestLazyActivity.class.getSimpleName();
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
 
     public static void newInstance(Context context) {
         Intent intent = new Intent();
@@ -37,14 +40,37 @@ public class TestLazyActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
-        setContentView(R.layout.activity_test_lazy);
-        //ButterKnife.bind(this);
-        mTabLayout = (TabLayout) findViewById(R.id.lazy_tab_layout);
-        mViewPager = (ViewPager) findViewById(R.id.lazy_view_pager);
+    protected int provideContentViewId() {
+        return R.layout.activity_test_lazy;
     }
 
     @Override
+    protected int provideAppBarLayoutId() {
+        return R.id.appbar_layout;
+    }
+
+    @Override
+    protected int provideToolbarId() {
+        return R.id.toolbar;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        initView();
+        initData();
+    }
+
+    protected void initView() {
+        //ButterKnife.bind(this);
+        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        mViewPager = (ViewPager) findViewById(R.id.lazy_view_pager);
+
+        getSupportActionBar().setTitle(TAG);//mToolbar.setTitle("ninhao")这样设置无效
+
+    }
+
     protected void initData() {
         LazyFragmentAdapter lazyFragmentAdapter = new LazyFragmentAdapter(getSupportFragmentManager());
         lazyFragmentAdapter.addTab(new FirstLazyFragment(), "FirstLazy");
@@ -54,6 +80,13 @@ public class TestLazyActivity extends BaseActivity {
         mViewPager.setAdapter(lazyFragmentAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+    @Override
+    public void onToolbarClick() {
+        super.onToolbarClick();
+
+        MLog.d("===onToolbarClick");
     }
 
     @Override

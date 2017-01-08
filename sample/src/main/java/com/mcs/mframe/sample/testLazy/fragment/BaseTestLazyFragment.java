@@ -1,5 +1,7 @@
 package com.mcs.mframe.sample.testLazy.fragment;
 
+import android.os.Build;
+import android.support.v4.view.ViewCompat;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -47,6 +49,9 @@ public class BaseTestLazyFragment extends LazyFragment {
 
         mProgressBar = findView(R.id.progress_bar);
         mProgressBar.setVisibility(View.VISIBLE);
+
+        //ListView能嵌套滚动，CoordinatorLayout才能起到作用，若在5.0以下版本推荐使用RecyclerView
+        ViewCompat.setNestedScrollingEnabled(mListView,true);
     }
 
     @Override

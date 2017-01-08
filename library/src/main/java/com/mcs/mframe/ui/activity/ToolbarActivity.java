@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.DecelerateInterpolator;
 
 /**
@@ -26,6 +27,7 @@ public abstract class ToolbarActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);//去掉原有的ActionBar
         beforeSetContent();
         setContentView(provideContentViewId());
         mAppBar = (AppBarLayout) findViewById(provideAppBarLayoutId());

@@ -9,3 +9,11 @@ FragmentStatePagerAdapter切换的时候不会保存fragment的状态，直接re
 (3)Fragment懒加载分析
 http://www.jianshu.com/p/104be7cd72b6 (Android之Fragment懒加载分析)
 http://www.cnblogs.com/dasusu/p/5926731.html (Fragment懒加载和ViewPager的坑)
+
+(4)ToolBar详解
+http://www.jianshu.com/p/79604c3ddcae （Android开发：最详细的 Toolbar 开发实践总结）
+http://blog.csdn.net/zhyh1986/article/details/52220907 (为什么 Android 中 Toolbar.setTitle() 没有效果)
+
+(5)CoordinatorLayout使用
+http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0717/3196.html （CoordinatorLayout与滚动的处理）
+http://dk-exp.com/2016/03/30/CoordinatorLayout/   (CoordinatorLayout中的坑)

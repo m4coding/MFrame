@@ -19,22 +19,6 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 public class BaseActivity extends RxAppCompatActivity {
 
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initView();
-        initData();
-    }
-
-    protected void initView() {
-
-    }
-
-    protected void initData() {
-
-    }
-
     /**************处理Fragment的相关方法*******************/
 
     public void addFragment(@NonNull int viewId, @NonNull Fragment fragment, @NonNull String tag, boolean isAddBackStack) {
