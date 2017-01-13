@@ -64,4 +64,11 @@ public class FirstLazyFragment extends BaseTestLazyFragment{
         super.initLazyData();
         produceData(TAG, 100000);
     }
+
+    @Override
+    protected void onSwipeRefresh() {
+        super.onSwipeRefresh();
+        MLog.d("=====onRefresh");
+        produceData(TAG, 10);
+    }
 }

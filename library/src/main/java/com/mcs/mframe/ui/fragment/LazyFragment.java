@@ -32,14 +32,17 @@ public abstract class LazyFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (DEBUG) MLog.i("savedInstanceState==" + savedInstanceState);
 
-        mConvertView = inflater.inflate(getLayoutId(), container, false);
-        mViews = new SparseArray<>();
+        if (mConvertView == null) {
+            mConvertView = inflater.inflate(getLayoutId(), container, false);
+        }
+        if (mViews == null) {
+            mViews = new SparseArray<>();
+        }
         initView();
         initData();
         mIsInitView = true;
         lazyLoadData();
         return mConvertView;
-
     }
 
     @Override
@@ -47,6 +50,11 @@ public abstract class LazyFragment extends BaseFragment {
         super.onDestroyView();
 
         mIsFirstLoad = true;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
 
         if (mViews != null) {
             mViews.clear();

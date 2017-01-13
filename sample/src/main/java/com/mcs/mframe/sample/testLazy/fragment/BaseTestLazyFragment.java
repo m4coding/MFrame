@@ -2,6 +2,7 @@ package com.mcs.mframe.sample.testLazy.fragment;
 
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -10,6 +11,7 @@ import com.mcs.mframe.log.MLog;
 import com.mcs.mframe.sample.R;
 import com.mcs.mframe.sample.testLazy.adapter.ListAdapter;
 import com.mcs.mframe.ui.fragment.LazyFragment;
+import com.trello.rxlifecycle.android.FragmentEvent;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,6 +36,7 @@ public class BaseTestLazyFragment extends LazyFragment {
 
     private List<String> mList;
     private ListView mListView;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
     private ProgressBar mProgressBar;
     private ListAdapter mListAdapter;
 
@@ -45,13 +48,39 @@ public class BaseTestLazyFragment extends LazyFragment {
     @Override
     protected void initView() {
         MLog.d("initView mListView==" + mListView + "; mProgressBar==" + mProgressBar);
-        mListView = findView(R.id.lazy_list_view);
-
-        mProgressBar = findView(R.id.progress_bar);
+        if (mListView == null) {
+            mListView = findView(R.id.lazy_list_view);
+            //ListView能嵌套滚动，CoordinatorLayout才能起到作用，若在5.0以下版本推荐使用RecyclerView
+            ViewCompat.setNestedScrollingEnabled(mListView,true);
+        }
+        if (mProgressBar == null) {
+            mProgressBar = findView(R.id.progress_bar);
+        }
         mProgressBar.setVisibility(View.VISIBLE);
 
-        //ListView能嵌套滚动，CoordinatorLayout才能起到作用，若在5.0以下版本推荐使用RecyclerView
-        ViewCompat.setNestedScrollingEnabled(mListView,true);
+        if (mSwipeRefreshLayout == null) {
+            mSwipeRefreshLayout = findView(R.id.swipe_refresh_layout);
+            mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+                    android.R.color.holo_green_light,
+                    android.R.color.holo_orange_light,
+                    android.R.color.holo_red_light);//发生变化的颜色，依次进行
+            mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    MLog.d("=====mSwipeRefreshLayout onRefresh");
+                    mSwipeRefreshLayout.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            onSwipeRefresh();
+                        }
+                    }, 1000);
+                }
+            });
+        }
+    }
+
+    protected void onSwipeRefresh() {
+
     }
 
     @Override
@@ -81,9 +110,16 @@ public class BaseTestLazyFragment extends LazyFragment {
                         MLog.d("handle end " + Thread.currentThread());
                     }
                 })
+                .doOnTerminate(new Action0() {
+                    @Override
+                    public void call() {
+                        MLog.d("====doOnTerminate");
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .compose(this.bindToLifecycle())
+                .compose(this.bindUntilEvent(FragmentEvent.DESTROY_VIEW))
                 .subscribe(new Action1<Object>() {
                     @Override
                     public void call(Object o) {

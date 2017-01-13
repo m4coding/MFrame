@@ -17,4 +17,11 @@ public class ThirdLazyFragment extends BaseTestLazyFragment {
         super.initLazyData();
         produceData(TAG, 2000);
     }
+
+    @Override
+    protected void onSwipeRefresh() {
+        super.onSwipeRefresh();
+
+        produceData(TAG, 2000);
+    }
 }

@@ -10,7 +10,6 @@ import android.support.v4.view.ViewPager;
 
 import com.mcs.mframe.log.MLog;
 import com.mcs.mframe.sample.R;
-import com.mcs.mframe.sample.R2;
 import com.mcs.mframe.sample.testLazy.adapter.LazyFragmentAdapter;
 import com.mcs.mframe.sample.testLazy.fragment.FirstLazyFragment;
 import com.mcs.mframe.sample.testLazy.fragment.FourthLazyFragment;
