@@ -17,3 +17,9 @@ http://blog.csdn.net/zhyh1986/article/details/52220907 (为什么 Android 中 To
 (5)CoordinatorLayout使用
 http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0717/3196.html （CoordinatorLayout与滚动的处理）
 http://dk-exp.com/2016/03/30/CoordinatorLayout/   (CoordinatorLayout中的坑)
+
+(6)TabLayout使用
+http://www.jianshu.com/p/d1d8b1a3c285 （Android 5.x Material design 之 TabLayout(01)）
+http://www.jianshu.com/p/5591cfc01a15 （Android 5.x Material design 之 TabLayout(02)）
+http://www.jianshu.com/p/2b2bb6be83a8 （Design库-TabLayout属性详解）
+http://yuzhiw.com/2016/11/25/solve-the-English-text-automatically-capitalized/ （解决 Button 和 TabLayout 英文自动大写的问题）

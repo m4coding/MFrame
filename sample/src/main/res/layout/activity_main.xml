@@ -28,6 +28,11 @@
                 android:layout_height="wrap_content"
                 android:text="LazyFragment测试"
                 android:onClick="onLazyFragmentTest"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RecyclerView-Adapter测试"
+                android:onClick="onRecyclerViewAdapterTest"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

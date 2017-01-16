@@ -23,6 +23,7 @@
         android:layout_height="?attr/actionBarSize"
         app:tabIndicatorColor="#fff"
         app:tabIndicatorHeight="2dp"
-        />
+        app:tabTextAppearance="@style/TextAppearance.TabLayout.not.allCaps"
+        app:tabMode="scrollable"/>
 
 </android.support.design.widget.AppBarLayout>

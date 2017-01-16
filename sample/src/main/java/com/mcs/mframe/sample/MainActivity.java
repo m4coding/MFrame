@@ -7,6 +7,7 @@ import android.view.View;
 import com.mcs.mframe.log.MLog;
 import com.mcs.mframe.log.base.MLogConstant;
 import com.mcs.mframe.sample.testLazy.TestLazyActivity;
+import com.mcs.mframe.sample.testRecyclerView.TestRecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,5 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onLazyFragmentTest(View view) {
         TestLazyActivity.newInstance(this);
+    }
+
+    public void onRecyclerViewAdapterTest(View view) {
+        TestRecyclerViewActivity.newInstance(this);
     }
 }

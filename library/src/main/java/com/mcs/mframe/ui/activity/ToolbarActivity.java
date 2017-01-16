@@ -90,6 +90,10 @@ public abstract class ToolbarActivity extends BaseActivity {
 
     }
 
+    public void setBarTitle(String title) {
+        getSupportActionBar().setTitle(title);//mToolbar.setTitle("ninhao")这样设置无效
+    }
+
     /**********抽象方法*************/
 
     /**

@@ -66,7 +66,7 @@ public class TestLazyActivity extends ToolbarActivity {
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         mViewPager = (ViewPager) findViewById(R.id.lazy_view_pager);
 
-        getSupportActionBar().setTitle(TAG);//mToolbar.setTitle("ninhao")这样设置无效
+        setBarTitle(TAG);
 
     }
 
