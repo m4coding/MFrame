@@ -19,18 +19,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Button.not_AllCaps"
                 android:text="MLog测试"
                 android:onClick="onMLogTest"/>
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Button.not_AllCaps"
                 android:text="LazyFragment测试"
                 android:onClick="onLazyFragmentTest"/>
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Button.not_AllCaps"
                 android:text="RecyclerView-Adapter测试"
                 android:onClick="onRecyclerViewAdapterTest"/>
         </LinearLayout>
