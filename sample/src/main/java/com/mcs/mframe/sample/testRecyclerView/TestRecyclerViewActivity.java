@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import com.mcs.mframe.sample.R;
 import com.mcs.mframe.sample.testRecyclerView.adapter.TestRecyclerViewVPAdapter;
 import com.mcs.mframe.sample.testRecyclerView.fragment.AnimationUseFragment;
+import com.mcs.mframe.sample.testRecyclerView.fragment.HeaderAndFooterUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.MultipleItemUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.model.HomeItem;
 import com.mcs.mframe.ui.activity.ToolbarActivity;
@@ -31,6 +32,7 @@ public class TestRecyclerViewActivity extends ToolbarActivity {
     private HomeItem mHomeItems[] = {
             new HomeItem(AnimationUseFragment.TAG ,new AnimationUseFragment()),
             new HomeItem(MultipleItemUseFragment.TAG, new MultipleItemUseFragment()),
+            new HomeItem(HeaderAndFooterUseFragment.TAG, new HeaderAndFooterUseFragment()),
     };
 
     public static void newInstance(Context context) {
