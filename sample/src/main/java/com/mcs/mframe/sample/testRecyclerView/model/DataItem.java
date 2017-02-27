@@ -13,6 +13,15 @@ public class DataItem {
     private String mText;
     private int mResId;
 
+    public DataItem() {
+
+    }
+
+    public DataItem(String text, int resId) {
+        mText = text;
+        mResId = resId;
+    }
+
     public void setText(String text) {
         mText = text;
     }

@@ -36,11 +36,11 @@ public class MultiItemAdapter extends BaseMultiItemQuickAdapter<MultiDataItem, B
                 switch (helper.getLayoutPosition() %
                         2) {
                     case 0:
-                        helper.setImageResource(R.id.iv, R.mipmap.agenting)
+                        helper.setImageResource(R.id.iv, R.drawable.agenting)
                               .setText(R.id.tv, "Argentina");
                         break;
                     case 1:
-                        helper.setImageResource(R.id.iv, R.mipmap.baxi);
+                        helper.setImageResource(R.id.iv, R.drawable.baxi);
                         break;
 
                 }

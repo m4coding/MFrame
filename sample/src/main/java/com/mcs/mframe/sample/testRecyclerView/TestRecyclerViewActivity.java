@@ -13,6 +13,7 @@ import com.mcs.mframe.sample.testRecyclerView.fragment.AnimationUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.HeaderAndFooterUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.MultipleItemUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.PullToRefreshUseFragment;
+import com.mcs.mframe.sample.testRecyclerView.fragment.SectionUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.model.HomeItem;
 import com.mcs.mframe.ui.activity.ToolbarActivity;
 
@@ -35,6 +36,7 @@ public class TestRecyclerViewActivity extends ToolbarActivity {
             new HomeItem(MultipleItemUseFragment.TAG, new MultipleItemUseFragment()),
             new HomeItem(HeaderAndFooterUseFragment.TAG, new HeaderAndFooterUseFragment()),
             new HomeItem(PullToRefreshUseFragment.TAG, new PullToRefreshUseFragment()),
+            new HomeItem(SectionUseFragment.TAG, new SectionUseFragment()),
     };
 
     public static void newInstance(Context context) {

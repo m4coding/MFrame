@@ -22,27 +22,27 @@ public class DataFactory {
             int value = i % 5;
             switch (value) {
                 case 0:
-                    dataItem.setResId(R.mipmap.zhongguo);
+                    dataItem.setResId(R.drawable.zhongguo);
                     dataItem.setText("China");
                     break;
                 case 1:
-                    dataItem.setResId(R.mipmap.agenting);
+                    dataItem.setResId(R.drawable.agenting);
                     dataItem.setText("Argentina");
                     break;
                 case 2:
-                    dataItem.setResId(R.mipmap.baxi);
+                    dataItem.setResId(R.drawable.baxi);
                     dataItem.setText("Brazil");
                     break;
                 case 3:
-                    dataItem.setResId(R.mipmap.deguo);
+                    dataItem.setResId(R.drawable.deguo);
                     dataItem.setText("Germany");
                     break;
                 case 4:
-                    dataItem.setResId(R.mipmap.eluosi);
+                    dataItem.setResId(R.drawable.eluosi);
                     dataItem.setText("Russia");
                     break;
                 default:
-                    dataItem.setResId(R.mipmap.baxi);
+                    dataItem.setResId(R.drawable.baxi);
                     dataItem.setText("Brazil");
                     break;
             }
@@ -61,6 +61,37 @@ public class DataFactory {
             list.add(new MultiDataItem(MultiDataItem.IMG_TEXT, MultiDataItem.IMG_TEXT_SPAN_SIZE_MIN));
             list.add(new MultiDataItem(MultiDataItem.IMG_TEXT, MultiDataItem.IMG_TEXT_SPAN_SIZE_MIN));
         }
+
+        return list;
+    }
+
+    public static List<SectionDataItem> getSectionDataItem() {
+        List<SectionDataItem> list = new ArrayList<>();
+        list.add(new SectionDataItem(true, "Section 1", true));
+        list.add(new SectionDataItem(new DataItem("China", R.drawable.zhongguo)));
+        list.add(new SectionDataItem(new DataItem("Argentina", R.drawable.agenting)));
+        list.add(new SectionDataItem(new DataItem("Brazil", R.drawable.baxi)));
+        list.add(new SectionDataItem(new DataItem("Germany", R.drawable.deguo)));
+        list.add(new SectionDataItem(new DataItem("Russia", R.drawable.eluosi)));
+
+        list.add(new SectionDataItem(true, "Section 2", false));
+        list.add(new SectionDataItem(new DataItem("China", R.drawable.zhongguo)));
+        list.add(new SectionDataItem(new DataItem("Argentina", R.drawable.agenting)));
+
+
+        list.add(new SectionDataItem(true, "Section 3", false));
+        list.add(new SectionDataItem(new DataItem("China", R.drawable.zhongguo)));
+        list.add(new SectionDataItem(new DataItem("Argentina", R.drawable.agenting)));
+        list.add(new SectionDataItem(new DataItem("Brazil", R.drawable.baxi)));
+        list.add(new SectionDataItem(new DataItem("Germany", R.drawable.deguo)));
+
+
+        list.add(new SectionDataItem(true, "Section 4", true));
+        list.add(new SectionDataItem(new DataItem("China", R.drawable.zhongguo)));
+
+        list.add(new SectionDataItem(true, "Section 5", false));
+        list.add(new SectionDataItem(new DataItem("China", R.drawable.zhongguo)));
+        list.add(new SectionDataItem(new DataItem("Argentina", R.drawable.agenting)));
 
         return list;
     }

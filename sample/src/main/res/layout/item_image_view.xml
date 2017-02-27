@@ -19,5 +19,5 @@
         android:layout_gravity="center"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:src="@mipmap/zhongguo"/>
+        android:src="@drawable/zhongguo"/>
 </android.support.v7.widget.CardView>

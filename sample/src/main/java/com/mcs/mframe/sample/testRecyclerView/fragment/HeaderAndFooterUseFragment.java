@@ -81,7 +81,7 @@ public class HeaderAndFooterUseFragment extends LazyFragment {
         View view = getActivity().getLayoutInflater().inflate(R.layout.head_view, (ViewGroup) mRecyclerView.getParent(), false);
         if (type == 1) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv);
-            imageView.setImageResource(R.mipmap.rm_icon);
+            imageView.setImageResource(R.drawable.rm_icon);
         }
         view.setOnClickListener(listener);
         return view;
@@ -90,7 +90,7 @@ public class HeaderAndFooterUseFragment extends LazyFragment {
         View view = getActivity().getLayoutInflater().inflate(R.layout.footer_view, (ViewGroup) mRecyclerView.getParent(), false);
         if (type == 1) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv);
-            imageView.setImageResource(R.mipmap.rm_icon);
+            imageView.setImageResource(R.drawable.rm_icon);
         }
         view.setOnClickListener(listener);
         return view;

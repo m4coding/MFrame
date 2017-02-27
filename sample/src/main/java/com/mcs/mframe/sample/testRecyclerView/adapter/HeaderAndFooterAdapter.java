@@ -25,13 +25,13 @@ public class HeaderAndFooterAdapter extends BaseQuickAdapter<DataItem, BaseViewH
         switch (helper.getLayoutPosition()%
                 3){
             case 0:
-                helper.setImageResource(R.id.iv,R.mipmap.zhongguo);
+                helper.setImageResource(R.id.iv,R.drawable.zhongguo);
                 break;
             case 1:
-                helper.setImageResource(R.id.iv,R.mipmap.baxi);
+                helper.setImageResource(R.id.iv,R.drawable.baxi);
                 break;
             case 2:
-                helper.setImageResource(R.id.iv,R.mipmap.agenting);
+                helper.setImageResource(R.id.iv,R.drawable.agenting);
                 break;
         }
     }
