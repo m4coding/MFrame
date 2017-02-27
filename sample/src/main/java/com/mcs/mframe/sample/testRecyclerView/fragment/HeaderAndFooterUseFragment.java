@@ -16,7 +16,7 @@ import com.mcs.mframe.ui.recyclerview.listener.OnItemClickListener;
 /**
  * @author mochangsheng
  * @version 1.0
- * @description 该类的主要功能描述
+ * @description Header View、Footer View使用示例
  * @created 2017/1/18
  * @changeRecord [修改记录] <br/>
  */

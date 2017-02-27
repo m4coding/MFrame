@@ -154,9 +154,9 @@ public abstract class BaseQuickAdapter<T, K extends BaseViewHolder> extends Recy
     }
 
     /**
-     * Refresh end, no more data
+     * Refresh end, no more data （指明加载更多已经结束）
      *
-     * @param gone if true gone the load more view
+     * @param gone if true gone the load more view (true 显示加载更多的View消失，false加载更多的View还在)
      */
     public void loadMoreEnd(boolean gone) {
         if (getLoadMoreViewCount() == 0) {

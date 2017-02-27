@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * @author mochangsheng
  * @version 1.0
- * @description 该类的主要功能描述
+ * @description item动画使用示例
  * @created 2017/1/16
  * @changeRecord [修改记录] <br/>
  */

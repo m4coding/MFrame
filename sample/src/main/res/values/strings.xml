@@ -2,4 +2,6 @@
     <string name="app_name">MFrameSample</string>
 
     <string name="json">"{\"NBA\":[\"詹姆斯\",\"科比\",\"乔丹 \"],\"tag\":\"著名球星\"}"</string>
+
+    <string name="load_more_error">加载出错</string>
 </resources>
