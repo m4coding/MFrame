@@ -20,6 +20,10 @@ public class AnimationAdapter extends BaseQuickAdapter<DataItem, BaseViewHolder>
         super(R.layout.item_animation, DataFactory.getSampleData(100));
     }
 
+    public AnimationAdapter(int dataSize) {
+        super(R.layout.item_animation, DataFactory.getSampleData(dataSize));
+    }
+
     @Override
     protected void convert(BaseViewHolder helper, DataItem item) {
         helper.setImageResource(R.id.img, item.getResId())

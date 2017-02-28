@@ -10,6 +10,7 @@ import android.support.v4.view.ViewPager;
 import com.mcs.mframe.sample.R;
 import com.mcs.mframe.sample.testRecyclerView.adapter.TestRecyclerViewVPAdapter;
 import com.mcs.mframe.sample.testRecyclerView.fragment.AnimationUseFragment;
+import com.mcs.mframe.sample.testRecyclerView.fragment.EmpViewUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.HeaderAndFooterUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.MultipleItemUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.PullToRefreshUseFragment;
@@ -37,6 +38,7 @@ public class TestRecyclerViewActivity extends ToolbarActivity {
             new HomeItem(HeaderAndFooterUseFragment.TAG, new HeaderAndFooterUseFragment()),
             new HomeItem(PullToRefreshUseFragment.TAG, new PullToRefreshUseFragment()),
             new HomeItem(SectionUseFragment.TAG, new SectionUseFragment()),
+            new HomeItem(EmpViewUseFragment.TAG, new EmpViewUseFragment()),
     };
 
     public static void newInstance(Context context) {

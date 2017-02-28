@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * @author mochangsheng
  * @version 1.0
- * @description 该类的主要功能描述
+ * @description Section功能显示
  * @created 2017/2/27
  * @changeRecord [修改记录] <br/>
  */
