@@ -12,6 +12,7 @@ import com.mcs.mframe.sample.testRecyclerView.adapter.TestRecyclerViewVPAdapter;
 import com.mcs.mframe.sample.testRecyclerView.fragment.AnimationUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.EmpViewUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.HeaderAndFooterUseFragment;
+import com.mcs.mframe.sample.testRecyclerView.fragment.ItemDragAndSwipeUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.MultipleItemUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.PullToRefreshUseFragment;
 import com.mcs.mframe.sample.testRecyclerView.fragment.SectionUseFragment;
@@ -39,6 +40,7 @@ public class TestRecyclerViewActivity extends ToolbarActivity {
             new HomeItem(PullToRefreshUseFragment.TAG, new PullToRefreshUseFragment()),
             new HomeItem(SectionUseFragment.TAG, new SectionUseFragment()),
             new HomeItem(EmpViewUseFragment.TAG, new EmpViewUseFragment()),
+            new HomeItem(ItemDragAndSwipeUseFragment.TAG, new ItemDragAndSwipeUseFragment()),
     };
 
     public static void newInstance(Context context) {
