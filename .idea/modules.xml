@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/MFrame.iml" filepath="$PROJECT_DIR$/MFrame.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidlserver/aidlserver.iml" filepath="$PROJECT_DIR$/aidlserver/aidlserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leakcanarydemo/leakcanarydemo.iml" filepath="$PROJECT_DIR$/leakcanarydemo/leakcanarydemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/performance/performance.iml" filepath="$PROJECT_DIR$/performance/performance.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
   </component>
