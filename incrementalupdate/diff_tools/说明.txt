@@ -1,0 +1,6 @@
+//diff生成patch
+./bsdiff old.apk new.apk old-to-new.patch
+
+
+//合成新的apk
+./bspatch old.apk  new.apk old-to-new.patch

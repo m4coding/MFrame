@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/aidlclient" />
             <option value="$PROJECT_DIR$/aidlserver" />
+            <option value="$PROJECT_DIR$/incrementalupdate" />
             <option value="$PROJECT_DIR$/leakcanarydemo" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/performance" />

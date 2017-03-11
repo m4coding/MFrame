@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
-apply from: '../resguard.gradle'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.mcs.performance"
+        applicationId "com.mcs.incrementalupate"
         minSdkVersion 9
         targetSdkVersion 25
         versionCode 1
@@ -18,14 +17,14 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
 
-        debug {
-            minifyEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
         }
     }
 }
