@@ -1,1 +1,1 @@
-include ':library', ':sample', ':aidlclient', ':aidlserver', ':performance', ':leakcanarydemo', ':incrementalupdate', ':tinkerdemo'
+include ':library', ':sample', ':aidlclient', ':aidlserver', ':performance', ':leakcanarydemo', ':incrementalupdate', ':tinkerdemo', ':activitydemo'
