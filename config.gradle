@@ -31,6 +31,7 @@ ext {
             "butterknife-compiler"      : "com.jakewharton:butterknife-compiler:8.4.0",
 
             //Retrofit
-            "retrofit"                  :  "com.squareup.retrofit2:retrofit:2.2.0"
+            "retrofit"                  :  "com.squareup.retrofit2:retrofit:2.2.0",
+            "gson-converter-factory"    :  "com.squareup.retrofit2:converter-gson:2.1.0"
     ]
 }

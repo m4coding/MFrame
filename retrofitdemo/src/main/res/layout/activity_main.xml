@@ -24,13 +24,29 @@
                 android:text="Get" />
             <Button
                 style="@style/button_style"
+                android:id="@+id/button_search_users"
+                android:text="search_users" />
+            <Button
+                style="@style/button_style"
                 android:id="@+id/button_post"
                 android:text="Post" />
         </LinearLayout>
     </HorizontalScrollView>
 
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/text_response"/>
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/text_response"
+            android:scrollbars="vertical"/>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/progress_bar"
+            android:visibility="gone"/>
+    </FrameLayout>
+
 </LinearLayout>

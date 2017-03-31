@@ -1,6 +1,8 @@
 package com.mcs.activitydemo;
 
 import android.content.res.Configuration;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -59,6 +61,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         MLog.d("onResume");
+
+        mHandler.sendEmptyMessageDelayed(1, 500);
+    }
+
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            switch (msg.what) {
+                case 1:
+                    MLog.d("1");
+                    test();
+                    mHandler.sendEmptyMessageDelayed(1, 500);
+                    break;
+                default:
+                break;
+            }
+        }
+    };
+
+    private void test() {
+        for(int i = 0; i < 1000000; i++) {
+
+        }
     }
 
     @Override

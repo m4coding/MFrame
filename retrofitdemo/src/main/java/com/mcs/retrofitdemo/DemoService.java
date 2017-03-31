@@ -1,10 +1,12 @@
 package com.mcs.retrofitdemo;
 
+import com.mcs.retrofitdemo.model.SearchUserEntity;
 import com.mcs.retrofitdemo.model.UserEntity;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * @author mochangsheng
@@ -16,7 +18,9 @@ import retrofit2.http.Path;
  */
 public interface DemoService {
 
-    @GET("{name}")
+    @GET("users/{name}")
     Call<UserEntity> getName(@Path("name") String name);
 
+    @GET("search/users")
+    Call<SearchUserEntity> searchUser(@Query("q") String searchName);
 }
