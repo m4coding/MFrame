@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import rx.Observable;
 
 /**
  * @author mochangsheng
@@ -23,4 +24,7 @@ public interface DemoService {
 
     @GET("search/users")
     Call<SearchUserEntity> searchUser(@Query("q") String searchName);
+
+    @GET("users/{name}")
+    Observable<UserEntity> getNameWithRxjava(@Path("name") String name);
 }

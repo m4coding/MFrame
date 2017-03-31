@@ -31,5 +31,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile rootProject.ext.dependencies["retrofit"]
     compile rootProject.ext.dependencies["gson-converter-factory"]
+    compile rootProject.ext.dependencies["rxjava"]
+    compile rootProject.ext.dependencies["rxandroid"]
+    compile rootProject.ext.dependencies["adapter-rxjava"]
     compile project(':library')
 }

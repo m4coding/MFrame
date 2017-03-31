@@ -18,11 +18,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mGetButton, mSearchUsersButton, mPostButton;
+    private Button mGetButton, mSearchUsersButton, mGetRxButton;
     private TextView mContentText;
     private ProgressBar mProgressBar;
 
@@ -38,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
         mContentText = (TextView) findViewById(R.id.text_response);
         mGetButton = (Button) findViewById(R.id.button_get);
         mSearchUsersButton = (Button) findViewById(R.id.button_search_users);
-        mPostButton = (Button) findViewById(R.id.button_post);
+        mGetRxButton = (Button) findViewById(R.id.button_get_with_rxjava);
         mGetButton.setOnClickListener(mOnClickListener);
         mSearchUsersButton.setOnClickListener(mOnClickListener);
-        mPostButton.setOnClickListener(mOnClickListener);
+        mGetRxButton.setOnClickListener(mOnClickListener);
 
         //内容过多时滚动显示
         mContentText.setMovementMethod(ScrollingMovementMethod.getInstance());
@@ -93,7 +97,32 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     break;
-                case R.id.button_post:
+                case R.id.button_get_with_rxjava:
+                    showOrHideProgress(true);
+                    mDemoService.getNameWithRxjava("mcshengInworking")
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<UserEntity>() {
+                                @Override
+                                public void onCompleted() {
+                                    showOrHideProgress(false);
+                                }
+
+                                @Override
+                                public void onError(Throwable e) {
+                                    String error =  e.toString();
+                                    MLog.e("throwable==" + e.toString());
+                                    mContentText.setText(error);
+                                    showOrHideProgress(false);
+                                }
+
+                                @Override
+                                public void onNext(UserEntity userEntityCall) {
+                                    String content =  userEntityCall.toString();
+                                    mContentText.setText(content);
+                                }
+                            });
+
                     break;
             }
         }
@@ -110,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
         mRetrofit = new Retrofit.Builder()
                 .baseUrl("https://api.github.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson)) //注意添加转换器
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create()) //添加Rxjava适配器
                 .build();
 
         mDemoService = mRetrofit.create(DemoService.class);
