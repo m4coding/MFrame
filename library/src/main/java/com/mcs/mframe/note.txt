@@ -23,3 +23,7 @@ http://www.jianshu.com/p/d1d8b1a3c285 （Android 5.x Material design 之 TabLayo
 http://www.jianshu.com/p/5591cfc01a15 （Android 5.x Material design 之 TabLayout(02)）
 http://www.jianshu.com/p/2b2bb6be83a8 （Design库-TabLayout属性详解）
 http://yuzhiw.com/2016/11/25/solve-the-English-text-automatically-capitalized/ （解决 Button 和 TabLayout 英文自动大写的问题）
+
+(7)ImageLoaderUtils
+https://github.com/soulrelay/ImageLoaderUtil  (图片加载库的封装案例)
+https://github.com/VankaIn/ImageLoaderFactory (随意切换图片框架)
