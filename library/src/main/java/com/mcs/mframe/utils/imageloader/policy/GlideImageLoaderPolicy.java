@@ -5,6 +5,7 @@ import android.os.Looper;
 import android.widget.ImageView;
 
 import com.bumptech.glide.DrawableRequestBuilder;
+import com.bumptech.glide.GenericRequestBuilder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
@@ -40,7 +41,12 @@ public class GlideImageLoaderPolicy extends BaseImageLoaderPolicy {
             configuration = mImageLoaderConfiguration;
         }
 
-        DrawableRequestBuilder drawableRequestBuilder = Glide.with(imageView.getContext())
+        /**
+         * 在加载gif图片时会打印
+         * Called reconfigure on a bitmap that is in use! This may cause graphical corruption!
+         * 这个是native层的警告信息，可以忽略
+         */
+        GenericRequestBuilder requestBuilder = Glide.with(imageView.getContext())
                 .load(url)
                 .placeholder(configuration.getImageResOnDefault())
                 .error(configuration.getImageResOnFail())
@@ -48,15 +54,15 @@ public class GlideImageLoaderPolicy extends BaseImageLoaderPolicy {
 
         //是否缓存在本地
         if (!configuration.isCacheOnDisk()) {
-            drawableRequestBuilder.diskCacheStrategy( DiskCacheStrategy.NONE);
+            requestBuilder.diskCacheStrategy( DiskCacheStrategy.NONE);
         }
 
 
         if (configuration.getImageLoadingListener() != null) {
             final ImageLoaderConfiguration finalConfiguration = configuration;
-            drawableRequestBuilder.listener(new RequestListener<String,GlideDrawable>() {
+            requestBuilder.listener(new RequestListener<String,Object>() {
                 @Override
-                public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                public boolean onException(Exception e, String model, Target<Object> target, boolean isFirstResource) {
 
                     //异常回调
                     if (finalConfiguration.getImageLoadingListener() != null) {
@@ -66,7 +72,7 @@ public class GlideImageLoaderPolicy extends BaseImageLoaderPolicy {
                 }
 
                 @Override
-                public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                public boolean onResourceReady(Object resource, String model, Target<Object> target, boolean isFromMemoryCache, boolean isFirstResource) {
                     //资源加载完回调
                     if (finalConfiguration.getImageLoadingListener() != null) {
                         finalConfiguration.getImageLoadingListener().onLoadingComplete(model, imageView);
@@ -78,7 +84,7 @@ public class GlideImageLoaderPolicy extends BaseImageLoaderPolicy {
             });
         }
 
-        drawableRequestBuilder.into(imageView);
+        requestBuilder.into(imageView);
 
         //资源加载开始回调
         if (configuration.getImageLoadingListener() != null) {

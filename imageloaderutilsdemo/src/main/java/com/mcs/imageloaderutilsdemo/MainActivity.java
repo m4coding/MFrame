@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void load() {
-        String url_1 = "http://image.sports.baofeng.com/25a3dbb0c99c5e48e52e60941ed230be";
-        String url_2 = "http://image.sports.baofeng.com/19ce5d6ac3b4fff255196f200b1d3079";
-        String url_3 = "http://image.sports.baofeng.com/25a3dbb0c99c5e48e52e60941ed230be";
+        String url_1 = "http://img3.imgtn.bdimg.com/it/u=1708275648,196699857&fm=214&gp=0.jpg";
+        String url_2 = "http://www.mengtu.cc/uploads/allimg/151226/1-1512261ZU1.jpg";
+        String url_3 = "http://b-ssl.duitang.com/uploads/blog/201408/16/20140816181213_V5Xwr.gif";
         ImageLoaderUtils.getInstance().displayImage(url_1, mImageView_1);
-        ImageLoaderUtils.getInstance().displayImage(url_2, mImageView_2);
+        ImageLoaderUtils.getInstance().displayImage(url_2, android.R.color.holo_blue_light, mImageView_2);
 
         ImageLoaderConfiguration imageLoaderConfiguration = new ImageLoaderConfiguration.Builder()
                 .imageResOnDefault(android.R.color.white)
@@ -57,6 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .build();
 
-        ImageLoaderUtils.getInstance().displayImage(url_2, mImageView_3, imageLoaderConfiguration);
+        ImageLoaderUtils.getInstance().displayImage(url_3, mImageView_3, imageLoaderConfiguration);
     }
 }
