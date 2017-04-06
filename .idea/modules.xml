@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/incrementalupdate/incrementalupdate.iml" filepath="$PROJECT_DIR$/incrementalupdate/incrementalupdate.iml" />
       <module fileurl="file://$PROJECT_DIR$/leakcanarydemo/leakcanarydemo.iml" filepath="$PROJECT_DIR$/leakcanarydemo/leakcanarydemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mlive/mlive.iml" filepath="$PROJECT_DIR$/mlive/mlive.iml" />
       <module fileurl="file://$PROJECT_DIR$/performance/performance.iml" filepath="$PROJECT_DIR$/performance/performance.iml" />
       <module fileurl="file://$PROJECT_DIR$/retrofitdemo/retrofitdemo.iml" filepath="$PROJECT_DIR$/retrofitdemo/retrofitdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />

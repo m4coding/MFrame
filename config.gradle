@@ -25,6 +25,7 @@ ext {
             "rxjava"                    : "io.reactivex:rxjava:1.2.0",
             "rxandroid"                 : "io.reactivex:rxandroid:1.2.1",
             "rxlifecycle-components"    : "com.trello:rxlifecycle-components:1.0",
+            "rxpermissions"             : "com.tbruyelle.rxpermissions:rxpermissions:0.9.3@aar",
             
             //ButterKnife
             "butterknife"               : "com.jakewharton:butterknife:8.4.0",
