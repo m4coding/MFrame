@@ -71,6 +71,8 @@ Android标准接口申请：
 
 ### Camera参考
 
+[google CameraView](https://github.com/google/cameraview)
+
 [Android相机实时自动对焦的完美实现](http://blog.csdn.net/huweigoodboy/article/details/51378751)
 
 [SweetCamera](https://github.com/huweigoodboy/SweetCamera)
