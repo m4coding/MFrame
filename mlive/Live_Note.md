@@ -75,6 +75,8 @@ Android标准接口申请：
 
 [SweetCamera](https://github.com/huweigoodboy/SweetCamera)
 
+[仿微信拍照Android控件](https://github.com/CJT2325/CameraView)
+
 
 ## 参考
 
