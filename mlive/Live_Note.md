@@ -80,6 +80,93 @@ Android标准接口申请：
 [仿微信拍照Android控件](https://github.com/CJT2325/CameraView)
 
 
+**2、推流**
+
+**2.1 利用金山云SDK来进行推流**
+
+（1）从[sdk](https://github.com/ksvc/KSYStreamer_Android)下载源码，进行编译
+
+编译过程注意，如果修改demo下的build.gradle,修改mavenCentral()为jcenter()，避免gradle依赖reuse connect
+
+如果gradle/gradle-wrapper.properties下的distributionUrl对应的gradle包下载失败，可以修改为已下载好的gradle包。
+
+
+（2）配置nginx服务器，用于处理中转
+
+需要在linux环境下配置服务器，现基于ubuntu环境下进行配置：
+
+- 下载nginx服务器源代码，下载地址为[nginx源码-1.11.13](http://nginx.org/download/nginx-1.11.13.tar.gz)
+
+- 安装依赖库，openssl、pcre
+
+		sudo apt-get install openssl libssl-dev  
+		
+		sudo apt-get install libpcre3 libpcre3-dev  
+
+- 下载nginx rtmp module
+
+		git clone https://github.com/arut/nginx-rtmp-module.git
+
+- 编译源码、安装nginx
+
+		./configure --prefix=/usr/local/nginx --add-module=/home/mochangsheng/live/nginx-rtmp-module --with-http_ssl_module --with-debug
+		
+		make
+		
+		sudo make install 
+
+- 配置nginx
+
+	修改/usr/local/nginx/conf/nginx.conf，添加rtmp配置项
+	
+		rtmp {   #rtmp服务
+		   server {
+		       listen 1935; #服务端口号
+		       chunk_size 4096;  #数据传输块的大小
+		       application myapp {
+		           live on;
+		       }
+		       application hls {
+		           live on;
+		           hls on;
+		           hls_path /tmp/hls;
+		       }
+		   }
+		}
+	
+	切换到/usr/local/nginx/sbin，执行sudo ./nginx -c ../conf/nginx.conf， 使配置生效
+
+	启动nginx，  sudo ./nginx
+
+- 在浏览器输入localhost，看是否能成功进入nginx的欢迎页面
+
+- 安装ffmpeg工具，来进行测试
+
+		sudo apt-get install ffmpeg
+
+- 推流测试
+	
+		//注意myapp指定要与nginx.conf中的application一致
+		ffmpeg -re -i test.flv -f flv rtmp://10.0.2.15/myapp/test1
+
+- 拉流测试
+
+		ffplay rtmp://10.0.2.15/myapp/test1
+
+#### 注意 
+
+- virtualbox虚拟机共享文件夹，需要执行的命令 sudo mount -t vboxsf myGithub /mnt/shared/
+
+- 若需要测试手机推流，可以先测试virtualbox为网络桥接模式，配置手机和服务器在同一网段上，就可以了
+
+### 参考 
+
+[搭建nginx rtmp直播服务器，ffmpeg模拟推流](http://cxuef.github.io/linux/%E3%80%90%E7%BD%AE%E9%A1%B6%E3%80%91%E6%90%AD%E5%BB%BAnginx-rtmp%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8Cffmpeg%E6%A8%A1%E6%8B%9F%E6%8E%A8%E6%B5%81/)
+
+[ubuntu下安装nginx时依赖库zlib，pcre，openssl安装方法](http://blog.csdn.net/z920954494/article/details/52132125)
+
+[利用nginx搭建RTMP视频点播、直播、HLS服务器](http://lib.csdn.net/article/57/37915?knId=1549)
+
 ## 参考
 
 [直播技术的总结](https://github.com/tiantianlan/LiveExplanation)
