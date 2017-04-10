@@ -4,6 +4,8 @@
 
 直播主要分三大部分，采集端、服务器和播放端。即把主播录制的视频，推流到服务器，经过服务器处理（如鉴黄等），最后通过CDN（Content Delivery Network 内容分发网络）分发给观众看。
 
+![直播流程](https://github.com/mcshengInworking/MFrame/raw/master/mlive/note/%E7%9B%B4%E6%92%AD%E6%B5%81%E7%A8%8B.png)
+
 ## 技术要点分析
 
 ### 基于Android直播技术分析
