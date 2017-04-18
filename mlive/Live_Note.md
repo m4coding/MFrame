@@ -155,19 +155,27 @@ Android标准接口申请：
 
 		ffplay rtmp://10.0.2.15/myapp/test1
 
-#### 注意 
+- **注意**
 
 - virtualbox虚拟机共享文件夹，需要执行的命令 sudo mount -t vboxsf myGithub /mnt/shared/
 
 - 若需要测试手机推流，可以先测试virtualbox为网络桥接模式，配置手机和服务器在同一网段上，就可以了
 
-### 参考 
+- **参考**
 
 [搭建nginx rtmp直播服务器，ffmpeg模拟推流](http://cxuef.github.io/linux/%E3%80%90%E7%BD%AE%E9%A1%B6%E3%80%91%E6%90%AD%E5%BB%BAnginx-rtmp%E7%9B%B4%E6%92%AD%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8Cffmpeg%E6%A8%A1%E6%8B%9F%E6%8E%A8%E6%B5%81/)
 
 [ubuntu下安装nginx时依赖库zlib，pcre，openssl安装方法](http://blog.csdn.net/z920954494/article/details/52132125)
 
 [利用nginx搭建RTMP视频点播、直播、HLS服务器](http://lib.csdn.net/article/57/37915?knId=1549)
+
+
+## 分析各个直播apk
+
+## 高仿直播软件项目
+
+[高仿斗鱼TV项目](https://github.com/TeamCodeForGit/DouYu)
+
 
 ## 参考
 

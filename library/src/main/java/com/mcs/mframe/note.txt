@@ -27,3 +27,10 @@ http://yuzhiw.com/2016/11/25/solve-the-English-text-automatically-capitalized/ �
 (7)ImageLoaderUtils
 https://github.com/soulrelay/ImageLoaderUtil  (图片加载库的封装案例)
 https://github.com/VankaIn/ImageLoaderFactory (随意切换图片框架)
+
+
+(8)架构处理
+
+https://github.com/Juude/Awesome-Android-Architecture  （Android架构合集）
+
+https://github.com/JessYanCoding/MVPArms （MVP快速搭建框架）
