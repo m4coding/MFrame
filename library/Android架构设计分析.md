@@ -15,3 +15,7 @@
 ## 参考
 
 [Android架构合集](https://github.com/Juude/Awesome-Android-Architecture#%E5%B8%B8%E8%A7%81%E6%9E%B6%E6%9E%84%E6%96%B9%E6%B3%95)
+
+[安居客 Android 项目架构演进](https://zhuanlan.zhihu.com/p/25420181)
+
+[MinimalistWeather](https://github.com/BaronZ88/MinimalistWeather)
