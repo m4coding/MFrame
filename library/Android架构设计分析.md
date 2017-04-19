@@ -8,7 +8,26 @@
 
 一个module为app，由业务组件组成，以业务来进行分包，用包名为区别业务类型，这样也便于维护业务。
 
-- **先以一个例子来分析：**
+- **先以一个App例子来分析：**
+
+
+    - com.mcs.test
+        + 业务一  //业务一
+        + 业务二
+        + 业务三
+        + 业务四
+        - 业务五
+            + model
+            - view
+                + adapter
+                + activity
+                + fragment
+                + widget
+            + presenter
+            + utils
+        + 业务六
+        - AppConstants.java //App全局常量
+        - MyApplication.java //Application类
 
 
 
@@ -19,3 +38,7 @@
 [安居客 Android 项目架构演进](https://zhuanlan.zhihu.com/p/25420181)
 
 [MinimalistWeather](https://github.com/BaronZ88/MinimalistWeather)
+
+[MvpArms](https://github.com/JessYanCoding/MVPArms/blob/master/MVPArms.md)
+
+[Android Architecture](https://github.com/googlesamples/android-architecture)

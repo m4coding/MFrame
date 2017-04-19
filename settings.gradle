@@ -1,1 +1,1 @@
-include ':library', ':sample', ':aidlclient', ':aidlserver', ':performance', ':leakcanarydemo', ':incrementalupdate', ':tinkerdemo', ':activitydemo', ':retrofitdemo', ':imageloaderutilsdemo', ':mlive', ':yylive'
+include ':library', ':sample', ':aidlclient', ':aidlserver', ':performance', ':leakcanarydemo', ':incrementalupdate', ':tinkerdemo', ':activitydemo', ':retrofitdemo', ':imageloaderutilsdemo', ':mlive', ':yylive', ':dagger2demo'
