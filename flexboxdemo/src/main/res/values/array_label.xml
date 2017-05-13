@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="profession_label">
+        <item>学生</item>
+        <item>模特</item>
+        <item>空姐</item>
+        <item>老师</item>
+        <item>护士</item>
+        <item>白领</item>
+        <item>歌手</item>
+        <item>演员</item>
+        <item>化妆师</item>
+        <item>摄影师</item>
+        <item>主持人</item>
+        <item>自由职业</item>
+    </string-array>
+
+    <string-array name="style_label">
+        <item>帅哥</item>
+        <item>小鲜肉</item>
+        <item>大叔</item>
+        <item>幽默风趣</item>
+        <item>阳光暖男</item>
+        <item>男神</item>
+        <item>女神</item>
+        <item>萌妹子</item>
+    </string-array>
+</resources>

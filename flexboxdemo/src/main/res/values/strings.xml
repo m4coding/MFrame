@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FlexboxDemo</string>
+
+    <string name="my_label">我的标签</string>
+    <string name="my_label_no_selected">未选择</string>
+    <string name="my_label_my_profession">我的职业</string>
+    <string name="my_label_my_style">风格气质</string>
+    <string name="boy">男生</string>
+    <string name="girl">女生</string>
+</resources>

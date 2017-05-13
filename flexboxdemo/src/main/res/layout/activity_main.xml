@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/px_30"
+    tools:context="com.mcs.flexboxdemo.MainActivity">
+
+    <TextView
+        style="@style/my_label_title_text"
+        android:id="@+id/tv_my_label"
+        android:text="@string/my_label"
+        android:layout_marginLeft="@dimen/px_30"/>
+
+    <TextView
+        style="@style/my_label_item_title_text"
+        android:id="@+id/tv_my_label__profession"
+        android:text="@string/my_label_no_selected"
+        android:layout_below="@+id/tv_my_label"
+        android:layout_marginTop="@dimen/px_30"
+        android:layout_marginLeft="@dimen/px_30"/>
+    <TextView
+        style="@style/my_label_item_title_text"
+        android:id="@+id/tv_my_label_style"
+        android:text="@string/my_label_no_selected"
+        android:layout_below="@+id/tv_my_label"
+        android:layout_toRightOf="@+id/tv_my_label__profession"
+        android:layout_marginTop="@dimen/px_30"
+        android:layout_marginLeft="@dimen/px_20" />
+
+    <View
+        android:id="@+id/space_1"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@+id/tv_my_label__profession"
+        android:background="#ec7ba6"
+        android:layout_marginTop="@dimen/px_20" />
+
+    <TextView
+        style="@style/my_label_title_text"
+        android:id="@+id/tv_my_profession"
+        android:text="@string/my_label_my_profession"
+        android:layout_below="@+id/space_1"
+        android:layout_marginTop="@dimen/px_30"
+        android:layout_marginLeft="@dimen/px_30"/>
+
+   <android.support.v7.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/px_290"
+       android:layout_below="@+id/tv_my_profession"
+       android:layout_marginTop="@dimen/px_30"
+       android:id="@+id/recyclerview_my_profession"
+       android:scrollbars="vertical"
+       android:fadeScrollbars="true"
+       tools:listitem="@layout/item_my_label"
+       android:paddingLeft="@dimen/px_20"
+       android:paddingRight="@dimen/px_20">
+   </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:id="@+id/space_2"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@+id/recyclerview_my_profession"
+        android:background="#ec7ba6"
+        android:layout_marginTop="@dimen/px_40" />
+
+    <TextView
+        style="@style/my_label_title_text"
+        android:id="@+id/tv_my_style"
+        android:text="@string/my_label_my_style"
+        android:layout_below="@+id/space_2"
+        android:layout_marginTop="@dimen/px_30"
+        android:layout_marginLeft="@dimen/px_30"/>
+
+    <TextView
+        style="@style/my_label_title_text_child"
+        android:id="@+id/tv_boy"
+        android:layout_below="@+id/space_2"
+        android:layout_marginTop="@dimen/px_30"
+        android:layout_toLeftOf="@+id/tv_girl"
+        android:layout_marginRight="@dimen/px_48"
+        android:text="@string/boy"/>
+
+    <TextView
+        style="@style/my_label_title_text_child"
+        android:id="@+id/tv_girl"
+        android:layout_below="@+id/space_2"
+        android:layout_marginTop="@dimen/px_30"
+        android:layout_alignParentRight="true"
+        android:text="@string/girl"
+        android:layout_marginRight="@dimen/px_30"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_290"
+        android:layout_below="@+id/tv_my_style"
+        android:layout_marginTop="@dimen/px_30"
+        android:id="@+id/recyclerview_my_style"
+        tools:listitem="@layout/item_my_label"
+        android:paddingLeft="@dimen/px_20"
+        android:paddingRight="@dimen/px_20">
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>

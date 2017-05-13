@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="my_label_title">#04050a</color>
+    <color name="my_label_title_no_select">#999999</color>
+    <color name="my_label_item_select">#ec7ba6</color>
+    <color name="my_label_item_no_select">#999999</color>
+</resources>

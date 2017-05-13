@@ -9,10 +9,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/activitydemo" />
             <option value="$PROJECT_DIR$/aidlclient" />
             <option value="$PROJECT_DIR$/aidlserver" />
             <option value="$PROJECT_DIR$/dagger2demo" />
+            <option value="$PROJECT_DIR$/flexboxdemo" />
             <option value="$PROJECT_DIR$/imageloaderutilsdemo" />
             <option value="$PROJECT_DIR$/incrementalupdate" />
             <option value="$PROJECT_DIR$/leakcanarydemo" />
