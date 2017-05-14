@@ -6,17 +6,20 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.android.flexbox.AlignItems;
 import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexWrap;
 import com.google.android.flexbox.FlexboxLayoutManager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerViewMyProfession, mRecyclerViewMyStyle;
+    private LabelAdapter mLabelAdapterProfession, mLabelAdapterStyle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        List<String> professionList = Arrays.asList(
-                getResources().getStringArray(R.array.profession_label));
 
-        List<String> styleList = Arrays.asList(
-                getResources().getStringArray(R.array.style_label));
+        int selection = 0;
+
+        List<LabelEntity> professionList = customData(
+                getResources().getStringArray(R.array.profession_label), selection);
+
+        List<LabelEntity> styleList = customData(getResources().getStringArray(R.array.style_label), selection);
 
         FlexboxLayoutManager layoutManagerProfession = new FlexboxLayoutManager();
         layoutManagerProfession.setFlexWrap(FlexWrap.WRAP);
@@ -47,22 +52,36 @@ public class MainActivity extends AppCompatActivity {
         LayoutManagerStyle.setFlexWrap(FlexWrap.WRAP);
         LayoutManagerStyle.setFlexDirection(FlexDirection.ROW);
 
-        LabelAdapter labelAdapterProfession = new LabelAdapter(R.layout.item_my_label, professionList);
-        LabelAdapter labelAdapterStyle = new LabelAdapter(R.layout.item_my_label, styleList);
+        mLabelAdapterProfession = new LabelAdapter(R.layout.item_my_label, professionList);
+        mLabelAdapterProfession.setSeletion(selection);
+        mLabelAdapterStyle = new LabelAdapter(R.layout.item_my_label, styleList);
+        mLabelAdapterStyle.setSeletion(selection);
 
         mRecyclerViewMyProfession.setLayoutManager(layoutManagerProfession);
         mRecyclerViewMyStyle.setLayoutManager(LayoutManagerStyle);
 
-        int itemSpace = (int) getResources().getDimensionPixelSize(R.dimen.px_20);
-        SpaceItemDecoration spaceItemDecoration = new SpaceItemDecoration(0, itemSpace, itemSpace, 0);
+        mRecyclerViewMyProfession.setAdapter(mLabelAdapterProfession);
 
-        //mRecyclerViewMyProfession.addItemDecoration(spaceItemDecoration);
-        mRecyclerViewMyProfession.setAdapter(labelAdapterProfession);
+        mRecyclerViewMyStyle.setAdapter(mLabelAdapterStyle);
 
-        //mRecyclerViewMyStyle.addItemDecoration(spaceItemDecoration);
-        mRecyclerViewMyStyle.setAdapter(labelAdapterStyle);
+    }
+
+    private List<LabelEntity> customData(String[] array, int selectedPosition) {
+
+        List<LabelEntity> list = new ArrayList<>();
+
+        if (array == null || array.length == 0) {
+            return list;
+        }
 
 
+        for(int i = 0; i < array.length; i++) {
+            boolean isSelected = (i == selectedPosition);
+            LabelEntity labelEntity = new LabelEntity(array[i], isSelected);
+            list.add(labelEntity);
+        }
+
+        return list;
     }
 
     private static class SpaceItemDecoration extends RecyclerView.ItemDecoration{
