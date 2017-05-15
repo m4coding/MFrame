@@ -11,21 +11,25 @@
     <style name="my_label_title_text">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/px_30</item>
+        <item name="android:textSize">@dimen/textsize_30</item>
         <item name="android:textColor">@color/my_label_title</item>
     </style>
 
     <style name="my_label_title_text_child">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/px_28</item>
+        <item name="android:textSize">@dimen/textsize_28</item>
         <item name="android:textColor">@drawable/selector_my_label_tile_child</item>
     </style>
 
-    <style name="my_label_item_title_text">
+    <style name="my_label_item_text" >
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/px_28</item>
-        <item name="android:textColor">@color/my_label_title_no_select</item>
+        <item name="android:textSize">@dimen/textsize_28</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/px_20</item>
+       <!-- <item name="tools:text">@string/my_label</item>
+        <item name="tools:textColor">@drawable/selector_my_label_item_profession_text</item>
+        <item name="tools:background">@drawable/selector_my_label_item_profession_bg</item>-->
     </style>
 </resources>

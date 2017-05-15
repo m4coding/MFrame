@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/px_10"> <!--使用外套FrameLayout加Padding的方式来实现RecyclerView item间距，而不是使用layoutMargin，因为这个属性（android4.1）会影响到flexbox -->
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/my_label_item_text"
+        android:id="@+id/my_label_item"
+        android:text="@string/my_label"
+        android:textColor="@drawable/selector_my_label_item_profession_text"
+        android:background="@drawable/selector_my_label_item_profession_bg">
+    </TextView>
+</FrameLayout>
+

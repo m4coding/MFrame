@@ -3,17 +3,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="px_1">0.5dp</dimen>
-    <dimen name="px_10">5dp</dimen>
-    <dimen name="px_20">10dp</dimen>
-    <dimen name="px_24">12dp</dimen>
-    <dimen name="px_28">14dp</dimen>
-    <dimen name="px_29">14.5dp</dimen>
-    <dimen name="px_30">15dp</dimen>
-    <dimen name="px_40">20dp</dimen>
-    <dimen name="px_48">24dp</dimen>
-    <dimen name="px_60">30dp</dimen>
-    <dimen name="px_220">110dp</dimen>
-    <dimen name="px_290">145dp</dimen>
+
     <dimen name="my_label_item_corner_radius">3dp</dimen>
+
+
+
+
 </resources>
