@@ -6,7 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidlserver/aidlserver.iml" filepath="$PROJECT_DIR$/aidlserver/aidlserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/dagger2demo/dagger2demo.iml" filepath="$PROJECT_DIR$/dagger2demo/dagger2demo.iml" />
+<<<<<<< Updated upstream
       <module fileurl="file://$PROJECT_DIR$/flexboxdemo/flexboxdemo.iml" filepath="$PROJECT_DIR$/flexboxdemo/flexboxdemo.iml" />
+=======
+>>>>>>> Stashed changes
       <module fileurl="file://$PROJECT_DIR$/imageloaderutilsdemo/imageloaderutilsdemo.iml" filepath="$PROJECT_DIR$/imageloaderutilsdemo/imageloaderutilsdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/incrementalupdate/incrementalupdate.iml" filepath="$PROJECT_DIR$/incrementalupdate/incrementalupdate.iml" />
       <module fileurl="file://$PROJECT_DIR$/leakcanarydemo/leakcanarydemo.iml" filepath="$PROJECT_DIR$/leakcanarydemo/leakcanarydemo.iml" />
