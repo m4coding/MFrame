@@ -45,3 +45,5 @@
 [悦跑圈 Android 单业务开发，提高编译效率 15 倍](https://www.diycode.cc/topics/761)
 
 [新闻客户端 A news-reading App (MVP+Dagger2+RxJava+Retrofit2+Material Design)](https://github.com/kaku2015/ColorfulNews)
+
+[秀趣 休闲类app](https://github.com/liulingfeng/Common)
