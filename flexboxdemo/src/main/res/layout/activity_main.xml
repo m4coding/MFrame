@@ -54,27 +54,17 @@
             android:layout_marginTop="@dimen/px_30"
             android:layout_marginLeft="@dimen/px_30"/>
 
-        <!--<android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_my_profession"
-            android:layout_marginTop="@dimen/px_30"
-            android:id="@+id/recyclerview_my_profession"
-            android:scrollbars="vertical"
-            android:fadeScrollbars="true"
-            tools:listitem="@layout/item_my_label_profession"
-            android:paddingLeft="@dimen/px_20"
-            android:paddingRight="@dimen/px_20">
-        </android.support.v7.widget.RecyclerView>-->
-        <com.zhy.view.flowlayout.TagFlowLayout
+        <com.mcs.flowlayout.TagFlowLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_my_profession"
             android:layout_marginTop="@dimen/px_30"
             android:id="@+id/flow_layout_my_profession"
             android:paddingLeft="@dimen/px_20"
-            android:paddingRight="@dimen/px_20">
-        </com.zhy.view.flowlayout.TagFlowLayout>
+            android:paddingRight="@dimen/px_20"
+            app:max_select="1"
+            app:only_select_effect="true">
+        </com.mcs.flowlayout.TagFlowLayout>
 
         <View
             android:id="@+id/space_2"
@@ -110,25 +100,17 @@
             android:text="@string/girl"
             android:layout_marginRight="@dimen/px_30"/>
 
-        <!--<android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_my_style"
-            android:layout_marginTop="@dimen/px_30"
-            android:id="@+id/recyclerview_my_style"
-            tools:listitem="@layout/item_my_label_style"
-            android:paddingLeft="@dimen/px_20"
-            android:paddingRight="@dimen/px_20">
-        </android.support.v7.widget.RecyclerView>-->
-        <com.zhy.view.flowlayout.TagFlowLayout
+        <com.mcs.flowlayout.TagFlowLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_my_style"
             android:layout_marginTop="@dimen/px_30"
             android:id="@+id/flow_layout_my_style"
             android:paddingLeft="@dimen/px_20"
-            android:paddingRight="@dimen/px_20">
-        </com.zhy.view.flowlayout.TagFlowLayout>
+            android:paddingRight="@dimen/px_20"
+            app:max_select="1"
+            app:only_select_effect="true">
+        </com.mcs.flowlayout.TagFlowLayout>
 
     </RelativeLayout>
 </ScrollView>

@@ -1,18 +1,15 @@
 package com.mcs.flexboxdemo;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.zhy.view.flowlayout.FlowLayout;
-import com.zhy.view.flowlayout.TagAdapter;
+import com.mcs.flowlayout.FlowLayout;
+import com.mcs.flowlayout.TagAdapter;
 
 import java.util.List;
+
 
 /**
  * @author mochangsheng
@@ -20,7 +17,6 @@ import java.util.List;
  */
 public class LabelAdapter extends TagAdapter<LabelEntity> {
 
-    private int mSelection = -1;
     private Context mContext;
     private int mRes;
     final LayoutInflater mInflater;
@@ -32,22 +28,18 @@ public class LabelAdapter extends TagAdapter<LabelEntity> {
         mInflater = LayoutInflater.from(mContext);
     }
 
-
-    public void setSelection(int selection) {
-        mSelection = selection;
-    }
-
-    public int getSelection() {
-        return mSelection;
+    //初始化时，指定哪个item被选中
+    @Override
+    public boolean setSelected(int position, LabelEntity labelEntity) {
+        return labelEntity.isSelected();
     }
 
     @Override
     public View getView(FlowLayout parent, int position, LabelEntity labelEntity) {
-        View itemView = mInflater.inflate(R.layout.item_my_label_profession, parent, false);
+        View itemView = mInflater.inflate(mRes, parent, false);
 
-        TextView textView = (TextView) itemView.findViewById(R.id.my_label_item);
+        TextView textView = (TextView) itemView;
         textView.setText(labelEntity.getLabel());
-        textView.setSelected(labelEntity.isSelected());
 
         return itemView;
     }

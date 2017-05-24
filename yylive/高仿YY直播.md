@@ -13,6 +13,13 @@
 
 	http://emyfs.bs2cdn.yy.com/N2NjZGUwNzctOTMwYS00ZmRjLWI2MzQtMGZjMTU4YmNlZTFi.jpg?imageview/4/0/w/363/h/330/blur/1
 
+热门导航栏
+
+	简化：
+	http://idx.3g.yy.com/mobyy/nav/index/idx?os=android&yyVersion=6.1.5
+
+	http://idx.3g.yy.com/mobyy/nav/index/idx?os=android&netType=2&hdid=ffd13274c5796e636fd141cf1aa6ee53&channel=official&bkt=0&yyVersion=6.1.5&mac=02%3A00%3A00%3A00%3A00%3A00&uid=0&osVersion=6.0.1&imei=355066066195415&model=SM-G9008V&sdkVersion=6.1.5&ispType=4
+
 歌舞导航栏
 
 	http://data.3g.yy.com/mobyy/nav/sing/idx?os=android&netType=2&hdid=44bca58e2005403ac0230af554a54e25&channel=1505&bkt=0&yyVersion=6.1.5&mac=02%3A00%3A00%3A00%3A00%3A00&uid=1737889437&osVersion=6.0.1&imei=460026188898485&model=MI+5&sdkVersion=6.1.5&ispType=1

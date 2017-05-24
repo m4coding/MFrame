@@ -1,27 +1,23 @@
 package com.mcs.flexboxdemo;
 
-import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.flexbox.AlignItems;
-import com.google.android.flexbox.FlexDirection;
-import com.google.android.flexbox.FlexWrap;
-import com.google.android.flexbox.FlexboxLayoutManager;
-import com.zhy.view.flowlayout.FlowLayout;
-import com.zhy.view.flowlayout.TagFlowLayout;
+import com.mcs.flowlayout.TagFlowLayout;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+
 public class MainActivity extends AppCompatActivity {
 
-    private TagFlowLayout mFlowLayoutMyProfession, mFlowLayoutMyStyle;
-    private LabelAdapter mLabelAdapterProfession, mLabelAdapterStyle;
+    private TagFlowLayout mMyProfessionFlowLayout, mMyStyleFlowLayout;
+    private LabelAdapter mProfessionLabelAdapter, mStyleLabelAdapter;
+    private TextView mMyProfessionLabel, mMyStyleLabel, mMyLabelTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         setContentView(R.layout.activity_main);
-        mFlowLayoutMyProfession = (TagFlowLayout) findViewById(R.id.flow_layout_my_profession);
-        mFlowLayoutMyStyle = (TagFlowLayout) findViewById(R.id.flow_layout_my_style);
+        mMyProfessionLabel = (TextView) findViewById(R.id.tv_my_label__profession);
+        mMyStyleLabel = (TextView) findViewById(R.id.tv_my_label_style);
+        mMyLabelTitle = (TextView) findViewById(R.id.tv_my_label);
+        mMyProfessionFlowLayout = (TagFlowLayout) findViewById(R.id.flow_layout_my_profession);
+        mMyStyleFlowLayout = (TagFlowLayout) findViewById(R.id.flow_layout_my_style);
     }
 
     private void initData() {
@@ -41,34 +40,50 @@ public class MainActivity extends AppCompatActivity {
         int selection = 0;
 
         //我的职业
-        List<LabelEntity> professionList = customData(
+        final List<LabelEntity> professionList = customData(
                 getResources().getStringArray(R.array.profession_label), selection);
 
-        mLabelAdapterProfession = new LabelAdapter(this, R.layout.item_my_label_profession, professionList);
-        mLabelAdapterProfession.setSelection(selection);
-        mFlowLayoutMyProfession.setAdapter(mLabelAdapterProfession);
-        mFlowLayoutMyProfession.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
+        mProfessionLabelAdapter = new LabelAdapter(this, R.layout.item_my_label_profession, professionList);
+        mMyProfessionFlowLayout.setAdapter(mProfessionLabelAdapter);
+        mMyProfessionFlowLayout.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
             @Override
-            public boolean onTagClick(View view, int position, FlowLayout parent) {
-                mLabelAdapterProfession.getItem(position).setSelected(true);
-                view.setSelected(true);
-                Toast.makeText(MainActivity.this, "i==" + mLabelAdapterProfession.getSelection(),Toast.LENGTH_LONG).show();
-                mLabelAdapterProfession.getItem(mLabelAdapterProfession.getSelection()).setSelected(false);
-                View preView = parent.getChildAt(mLabelAdapterProfession.getSelection());
-                preView.setSelected(false);
-                mLabelAdapterProfession.setSelection(position);
-                mLabelAdapterProfession.notifyDataChanged();
-                return false;
+            public void onSelected(Set<Integer> selectPosSet) {
+                setLabel(mMyProfessionLabel, selectPosSet, professionList);
             }
         });
 
+        mMyProfessionLabel.setText(professionList.get(selection).getLabel());
+        mMyProfessionLabel.setSelected(true);
+
         //我的风格
-        List<LabelEntity> styleList = customData(getResources().getStringArray(R.array.style_label), selection);
+        final List<LabelEntity> styleList = customData(getResources().getStringArray(R.array.style_label), selection);
 
-        mLabelAdapterStyle = new LabelAdapter(this, R.layout.item_my_label_style, styleList);
-        mLabelAdapterStyle.setSelection(selection);
-        mFlowLayoutMyStyle.setAdapter(mLabelAdapterStyle);
+        mStyleLabelAdapter = new LabelAdapter(this, R.layout.item_my_label_style, styleList);
+        mMyStyleFlowLayout.setAdapter(mStyleLabelAdapter);
+        mMyStyleFlowLayout.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
+            @Override
+            public void onSelected(Set<Integer> selectPosSet) {
+                setLabel(mMyStyleLabel, selectPosSet, styleList);
+            }
+        });
 
+        mMyStyleLabel.setText(styleList.get(selection).getLabel());
+        mMyStyleLabel.setSelected(true);
+
+        mMyLabelTitle.setText(getMyLabelString(2));
+    }
+
+    private String getMyLabelString(int total) {
+        return String.format(getString(R.string.my_label) + "  (%d/2)", total);
+    }
+
+    private void setLabel(TextView textVew, Set<Integer> selectPosSet, List<LabelEntity> list) {
+        Iterator<Integer> iterator = selectPosSet.iterator();
+        while (iterator.hasNext()) {
+            int position = iterator.next();
+            //Toast.makeText(MainActivity.this, "position==" + position, Toast.LENGTH_LONG).show();
+            textVew.setText(list.get(position).getLabel());
+        }
     }
 
     private List<LabelEntity> customData(String[] array, int selectedPosition) {
@@ -88,26 +103,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return list;
-    }
-
-    private static class SpaceItemDecoration extends RecyclerView.ItemDecoration{
-
-        private int left, top, right, bottom;
-
-        public SpaceItemDecoration(int left, int top, int right, int bottom) {
-            this.left = left;
-            this.top = top;
-            this.right = right;
-            this.bottom = bottom;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-
-            outRect.top = this.top;
-            outRect.left = this.left;
-            outRect.right = this.right;
-            outRect.bottom = this.bottom;
-        }
     }
 }
