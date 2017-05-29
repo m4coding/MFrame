@@ -47,3 +47,5 @@
 [新闻客户端 A news-reading App (MVP+Dagger2+RxJava+Retrofit2+Material Design)](https://github.com/kaku2015/ColorfulNews)
 
 [秀趣 休闲类app](https://github.com/liulingfeng/Common)
+
+[BookReader 任阅 项目基于RxJava + Retrofit2 + Dagger2](https://github.com/JustWayward/BookReader)
