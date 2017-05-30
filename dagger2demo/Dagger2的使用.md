@@ -70,3 +70,6 @@ A a;
 [Android：dagger2让你爱不释手-终结篇](http://www.jianshu.com/p/65737ac39c44)
 
 [清晰 dagger2 中译文教程系列](https://juejin.im/entry/572232fc1532bc00624b5c8e)
+
+
+[dagger 2 详解](http://mp.weixin.qq.com/s?__biz=MzAxMTI4MTkwNQ==&mid=2650820566&idx=1&sn=3575d671c7e071541a846f9074c0090a&scene=4#wechat_redirect)
