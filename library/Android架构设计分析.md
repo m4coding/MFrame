@@ -53,3 +53,7 @@
 [Daily is a content collection Android client, base on Material Design + MVP + RxJava + Retrofit ](https://github.com/spring2613/Daily)
 
 [EasyReader  	用知乎和gankio 网易新闻 豆瓣电影的API，模仿网易云音乐UI来完成一个基于Material Design +Rxjava + Retrofit + dagger2 + MVP构架的项目](https://github.com/laotan7237/EasyReader)
+
+[硅谷商城 商城类项目](https://github.com/atguigu01/Shopping)
+
+[diycode客户端](https://github.com/GcsSloop/diycode)

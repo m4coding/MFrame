@@ -9,4 +9,5 @@ import dagger.Component;
 @Component
 public interface TestComponent {
     void inject(MainActivity activity);
+    void inject(TestActivity activity);
 }
