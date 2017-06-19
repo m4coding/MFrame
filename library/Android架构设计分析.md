@@ -57,3 +57,7 @@
 [硅谷商城 商城类项目](https://github.com/atguigu01/Shopping)
 
 [diycode客户端](https://github.com/GcsSloop/diycode)
+
+[bilibili客户端](https://github.com/HotBitmapGG/bilibili-android-client)
+
+[MVP例子](https://github.com/SuperMan42/MVP)
