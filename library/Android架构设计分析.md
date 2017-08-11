@@ -61,3 +61,5 @@
 [bilibili客户端](https://github.com/HotBitmapGG/bilibili-android-client)
 
 [MVP例子](https://github.com/SuperMan42/MVP)
+
+[JD-Test 仿京东客户端](https://github.com/liu-xiao-dong/JD-Test)
